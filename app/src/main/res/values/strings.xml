@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CityAssist</string>
+    <string name="action_settings">Settings</string>
+    <string name="login">Login</string>
+    <string name="title_activity_signup_page">signup_page</string>
+    <string name="title_activity_signin1">signin1</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_dbactivity">dbactivity</string>
+</resources>
