@@ -78,9 +78,9 @@ public class mydbhandler extends SQLiteOpenHelper {
         }
 
     }
-    public void check(){
-        SQLiteDatabase db = this.getWritableDatabase();
-    }
+//    public void check(){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//    }
 
     public ArrayList<dbaccess> dbtostring(){
 
@@ -95,6 +95,7 @@ public class mydbhandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()){
             do {
                 register = new dbaccess();
+                register.set_id(cursor.getInt(0));
                 register.set_username(cursor.getString(1));
                 register.set_name(cursor.getString(2));
                 register.set_age(cursor.getInt(3));

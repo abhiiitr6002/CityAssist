@@ -42,7 +42,7 @@ public class signup_page extends AppCompatActivity {
        // Intent i = new Intent(this,MainActivity.class);
         //startActivity(i);
     }
-    public void gotodbactivity(){
+    public void asdf(View view){
         Intent i = new Intent(this,dbactivity.class);
         startActivity(i);
     }

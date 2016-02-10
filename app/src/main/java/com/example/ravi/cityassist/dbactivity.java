@@ -25,21 +25,33 @@ public class dbactivity extends AppCompatActivity {
 
         mytext = (TextView) findViewById(R.id.textView2);
 
+       // printdatabase();
+    }
+    public void clickme(View view){
+        printdatabase();
     }
 
     public void printdatabase() {
-        ArrayList<dbaccess> data = dbhandler.dbtostring();
+        ArrayList<dbaccess> data= new ArrayList<>();
+        try{
+        data = dbhandler.dbtostring();
+        Toast.makeText(dbactivity.this, "fghh", Toast.LENGTH_LONG).show();
+       // try{
         if (data != null) {
-           // for (int i=0)
-        dbaccess registration = data.get(data.size() - 1);
-            StringBuilder build = new StringBuilder();
-            for (int i=0;i<data.size();i++){
-                build.append(data.get(i));
+            // for (int i=0)
+           // dbaccess registration = data.get(data.size() - 1);
+//            StringBuilder build = new StringBuilder();
+//            for (int i=0;i<data.size();i++){
+//                build.append(data.get(i));
+
+            mytext.setText((CharSequence) data.get(1));
+        }
+        }catch(Exception e){
+            Toast.makeText(dbactivity.this, "Mark idhar hain", Toast.LENGTH_LONG).show();
             }
-        mytext.setText(build.toString());
         //Toast.makeText(Signuppage.this, registration.get_name(), Toast.LENGTH_LONG).show();
         // name.setText("");
-        }
+      //  }
     }
 
 }
