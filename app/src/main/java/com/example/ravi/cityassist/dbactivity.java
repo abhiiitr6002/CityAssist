@@ -25,6 +25,7 @@ public class dbactivity extends AppCompatActivity {
 
         mytext = (TextView) findViewById(R.id.textView2);
 
+        dbhandler= new mydbhandler(this,null,null,1);
        // printdatabase();
     }
     public void clickme(View view){
@@ -32,22 +33,31 @@ public class dbactivity extends AppCompatActivity {
     }
 
     public void printdatabase() {
-        ArrayList<dbaccess> data= new ArrayList<>();
-        try{
+        ArrayList<dbaccess> data;
+       try{
+      //  dbhandler = new mydbhandler();
+          //  Toast.makeText(dbactivity.this,"yahan tak aaya",Toast.LENGTH_SHORT).show();
         data = dbhandler.dbtostring();
-        Toast.makeText(dbactivity.this, "fghh", Toast.LENGTH_LONG).show();
+        //Toast.makeText(dbactivity.this, "fghh", Toast.LENGTH_LONG).show();
        // try{
         if (data != null) {
             // for (int i=0)
-           // dbaccess registration = data.get(data.size() - 1);
-//            StringBuilder build = new StringBuilder();
-//            for (int i=0;i<data.size();i++){
-//                build.append(data.get(i));
+           dbaccess registration = data.get(data.size() - 1);
+            StringBuilder build = new StringBuilder();
+                build.append(registration.get_id());
+            build.append(" ");
+            build.append(registration.get_username());
+            build.append(" ");
+            build.append(registration.get_name());
+            build.append(" ");
+            build.append(registration.get_password());
+            build.append(" ");
+            build.append(registration.get_email());
 
-            mytext.setText((CharSequence) data.get(1));
+            mytext.setText(build.toString());
         }
         }catch(Exception e){
-            Toast.makeText(dbactivity.this, "Mark idhar hain", Toast.LENGTH_LONG).show();
+           // Toast.makeText(dbactivity.this, "Mark idhar hain", Toast.LENGTH_LONG).show();
             }
         //Toast.makeText(Signuppage.this, registration.get_name(), Toast.LENGTH_LONG).show();
         // name.setText("");

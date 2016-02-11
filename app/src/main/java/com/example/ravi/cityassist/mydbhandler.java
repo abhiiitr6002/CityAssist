@@ -69,7 +69,7 @@ public class mydbhandler extends SQLiteOpenHelper {
             SQLiteDatabase db = this.getWritableDatabase();
 
             db.insert(TABLE_PRODUCTS, null, content);
-            Toast.makeText(getContext,"hello 555",Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(getContext,"hello 555",Toast.LENGTH_SHORT).show();
             db.close();
         }catch (Exception e){
             Log.e(String.valueOf(tas),"Problem is here");
@@ -84,9 +84,11 @@ public class mydbhandler extends SQLiteOpenHelper {
 
     public ArrayList<dbaccess> dbtostring(){
 
-        ArrayList<dbaccess> dataList = new ArrayList<>();
+
+        ArrayList<dbaccess> dataList = new ArrayList<dbaccess>();
         dbaccess register;
 
+      //  Toast.makeText(getContext, "Samasya hai", Toast.LENGTH_SHORT).show();
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM " + TABLE_PRODUCTS;
 
@@ -104,11 +106,17 @@ public class mydbhandler extends SQLiteOpenHelper {
                 dataList.add(register);
             }while (cursor.moveToNext());
         }
+       // Toast.makeText(getContext, dataList.size(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getContext,"cursor tak", Toast.LENGTH_SHORT).show();
+//        Log.e(String.valueOf(tas), String.valueOf(dataList.size()));
         cursor.close();
         db.close();
         if(dataList.size()<=0){
             dataList = null;
+           // Toast.makeText(getContext,"zero size", Toast.LENGTH_SHORT).show();
         }
+      //  Toast.makeText(getContext,String.valueOf(dataList.size()), Toast.LENGTH_SHORT).show();
+      //  Log.e(String.valueOf(tas), String.valueOf(dataList.get(1)));
         return dataList;
     }
 
